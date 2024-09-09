@@ -16,9 +16,9 @@ const coffee_menu = [
     description: "",
   },
 ];
-export async function GET(req: Request) {
+export async function GET() {
   try {
-    let {} = await req.json();
+    // let {} = await req.json();
     return NextResponse.json(coffee_menu);
   } catch (error) {
     console.log("[ERROR]", error);
