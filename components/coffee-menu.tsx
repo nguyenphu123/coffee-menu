@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useState, useEffect } from "react";
 export default function Coffee_menu() {
@@ -15,7 +16,8 @@ export default function Coffee_menu() {
 
     getDepartments();
   }, []);
-  async function onSubmit() {
+  async function onSubmit(e: any) {
+    e.preventDefault();
     const data = await fetch("/api/coffee_menu", {
       method: "POST",
       body: JSON.stringify({
@@ -35,7 +37,7 @@ export default function Coffee_menu() {
             name="search"
             onChange={(e) => setSearch(e.target.value)}
           />
-          <button type="submit" onClick={() => onSubmit}>
+          <button type="submit" onClick={(e) => onSubmit(e)}>
             Search
           </button>
         </form>
