@@ -1,26 +1,26 @@
 import { NextResponse } from "next/server";
-import { stringify } from "querystring";
-const coffee_menu = [
-  {
-    name: "Coffee 1",
-    price: "5$",
-    description: "",
-  },
-  {
-    name: "Coffee 2",
-    price: "6$",
-    description: "",
-  },
-  {
-    name: "Coffee 3",
-    price: "7$",
-    description: "",
-  },
-];
+
+// const coffee_menu = [
+//   {
+//     name: "Coffee 1",
+//     price: "5$",
+//     description: "",
+//   },
+//   {
+//     name: "Coffee 2",
+//     price: "6$",
+//     description: "",
+//   },
+//   {
+//     name: "Coffee 3",
+//     price: "7$",
+//     description: "",
+//   },
+// ];
 export async function GET() {
   try {
     // let {} = await req.json();
-    var loginOptions = {
+    const loginOptions = {
       method: "GET",
       url: "https://nginx-ingress.akamai-coffee.uk/api/cafe-get",
       headers: {
@@ -41,7 +41,7 @@ export async function GET() {
 export async function POST(req: Request) {
   const { coffee } = await req.json();
   try {
-    var loginOptions = {
+    const loginOptions = {
       method: "POST",
       url: "https://nginx-ingress.akamai-coffee.uk/api/cafe-post",
       headers: {

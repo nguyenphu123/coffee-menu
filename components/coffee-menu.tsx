@@ -1,5 +1,4 @@
 "use client";
-import { stringify } from "querystring";
 import { useState, useEffect } from "react";
 export default function Coffee_menu() {
   const [menu, setMenu] = useState([]);
@@ -16,8 +15,7 @@ export default function Coffee_menu() {
 
     getDepartments();
   }, []);
-  async function onSubmit(e: any) {
-    e.preventDefault();
+  async function onSubmit() {
     const data = await fetch("/api/coffee_menu", {
       method: "POST",
       body: JSON.stringify({
