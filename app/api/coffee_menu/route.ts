@@ -61,14 +61,14 @@ export async function POST(req: Request) {
     } else {
       const loginOptions = {
         method: "POST",
-        url: "https://nginx-ingress.akamai-coffee.uk/api/cafe-post",
+        url: "http://nginx-ingress.akamai-coffee.uk/api/cafe-get",
         headers: {
           "Content-Type": "application/json",
         },
         body: coffee,
       };
       const response = await fetch(
-        `https://nginx-ingress.akamai-coffee.uk/api/cafe-post`,
+        `http://nginx-ingress.akamai-coffee.uk/api/cafe-post`,
         loginOptions
       );
       const result = await response.json();
