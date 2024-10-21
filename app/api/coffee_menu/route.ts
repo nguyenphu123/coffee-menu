@@ -22,13 +22,13 @@ export async function GET() {
     // let {} = await req.json();
     const loginOptions = {
       method: "GET",
-      url: "https://nginx-ingress.akamai-coffee.uk/api/cafe-get",
+      url: "http://nginx-ingress.akamai-coffee.uk/api/cafe-get",
       headers: {
         "Content-Type": "application/json",
       },
     };
     const response = await fetch(
-      `https://nginx-ingress.akamai-coffee.uk/api/cafe-get`,
+      `http://nginx-ingress.akamai-coffee.uk/api/cafe-get`,
       loginOptions
     );
     const result = await response.json();
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
     if (coffee != "apple") {
       const loginOptions = {
         method: "POST",
-        url: "https://nginx-ingress.akamai-coffee.uk/api/cafe-post",
+        url: "http://nginx-ingress.akamai-coffee.uk/api/cafe-post",
         headers: {
           "Content-Type": "application/json",
         },
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
         }),
       };
       const response = await fetch(
-        `https://nginx-ingress.akamai-coffee.uk/api/cafe-post`,
+        `http://nginx-ingress.akamai-coffee.uk/api/cafe-post`,
         loginOptions
       );
       const result = await response.json();
